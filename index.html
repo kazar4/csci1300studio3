@@ -11,17 +11,27 @@
   <!-- page content goes into <body> -->
   <body>
     <div id="cs1300-gallery">
-      <h1>Welcome to my bakery</h1>
-      <p>Add your own images and styles!</p>
+      <div class="header-container"> 
+        <h1>Welcome to my bakery</h1>
+        <p>A Very Cool Bakery</p>
+      </div>
 
       <!-- TODO: PART I Add your own images and use CSS flex to make sure they work on different screen sizes -->
       <div class="gallery-container">
-        <img class="gallery-item" src="./assets/jeff.jpg" alt="jeff watching u">
+        <img class="gallery-item" src="https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/story/how-sweet-it.jpg?itok=IOyK92Fc", alt="macarons">
+        <img class="gallery-item" src="https://cdn.vox-cdn.com/thumbor/_68M5a9rpd0vsmedBBUOLurAtRE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22884680/Buddy_V_s_Cake_Slice_4.jpg", alt="buddy valastro (cake boss)">
+        <img class="gallery-item" src="https://www.bakefromscratch.com/wp-content/uploads/2017/12/most-popular-baked-goods-17-slider-696x267.jpg", alt="cake">
+        <img class="gallery-item" src="https://img.huffingtonpost.com/asset/5fd247a62100001c0973e74c.jpeg?cache=svGW1BE3Rm&ops=crop_7_272_2501_1942%2Cscalefit_720_noupscale", alt="ginder bread cookie">
+        <img class="gallery-item" src="https://cdn.hswstatic.com/gif/americas-favorite-baked-goods-1.jpg", alt="apple pie">
+        <img class="gallery-item" src="https://www.aldi.us/fileadmin/fm-dam/Recipes/2022/Masthead_Images/Baked_Goods_Mobile_Masthead_Hero.jpg", alt="muffin">
       </div>
 
       <!-- TODO: PART II Uncomment the line below, and hook up this button to display data from an API -->
-      <!-- <button onclick="updatePage()">Press this button to display some fruit data</button> -->
+      <button onclick="updatePage()">Press this button to display some fruit data</button>
     </div>
+
+    <h2 class="berry-header-container">Berries and Stuff</h2>
+    <div id="fruit-container"></div>
   </body>
 
 </html>

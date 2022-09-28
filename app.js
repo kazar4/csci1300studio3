@@ -8,6 +8,9 @@ const apiRequest = async () => {
   // Making a fetch request to an API endpoint
   // Note: a fetch request is an asynchronous operation, and `await` tells the program to wait until the request has been completed before continuing
   const endpoint = BASE_URL + resourcePath;
+
+  //console.log(endpoint)
+
   const response = await fetch(buildProxyEndpoint(endpoint), {
     method: "GET",
     headers: {
@@ -15,7 +18,7 @@ const apiRequest = async () => {
     }
   });
 
-  // console.log(response);
+  //console.log(response);
 
   // Return the response in JSON format
   return response.json();
@@ -25,16 +28,27 @@ const updatePage = async () => {
   const gallery = document.getElementById('cs1300-gallery');
 
   // Make API request and get an array of fruit objects
-  const fruitsArray = await apiRequest();
-  // console.log(fruitsArray);
+  let fruitsArray = await apiRequest();
+  console.log(fruitsArray);
 
   // TODO: Use either `map` and/or `filter` to extract some data from the array of fruit objects
   // For example, find "name of all fruits whose sugar > 15",
+  fruitsArray = fruitsArray.filter((fruit) => fruit.family == "Rosaceae")
+  fruitsArray = fruitsArray.map((fruit) => fruit.name)
 
-  // TODO: Create a new HTML element to display your data
-
-  // TODO: Append your new element to the page
-
+  console.log(fruitsArray)
+  
+  const fruitContainer = document.getElementById("fruit-container")
+  fruitContainer.innerHTML = ""
+  for (i = 0; i < fruitsArray.length; i++) {
+    //document.body.innerHTML = document.body.innerHTML + `<div class="fruit"> ${fruitsArray[i]}</div>`
+  
+    // TODO: Create a new HTML element to display your data
+    // TODO: Append your new element to the page
+    let fruit = document.createElement('div');
+    fruit.innerHTML = fruitsArray[i];
+    fruitContainer.appendChild(fruit);
+  }
 }
 
 // SAMPLE CODE of how to create and append a new HTML element to the page
